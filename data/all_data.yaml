@@ -1,0 +1,17 @@
+person:
+  - id: 0
+    name: Name
+    degree: Degree
+    profession: Profession
+  - id: 1
+    name: Vasia
+    degree: pty
+    profession: svaarshik
+vacancy:
+  - id: 0
+    name: name
+    dep: dep
+    pay: pay
+    age: age
+    deg: deg
+    prof: prof
