@@ -1,10 +1,11 @@
 class Person
-  attr_reader :name, :degree, :profession
+  attr_reader :name, :deg, :prof
 
-  def initialize(name, degree, profession)
-    @name = dname
-    @deg = degree
-    @prof = profession
+  def initialize(name, deg, prof)
+    @name = name
+    @deg = deg
+    @prof = prof
+    
   end
 
   def to_s

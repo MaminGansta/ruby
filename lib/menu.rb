@@ -9,22 +9,26 @@ class Menu
     persons_array = fill_persons(data['person'])
     vacancy_arrray = fill_vacancy(data['vacancy'])
 
-    puts "#{vacancy_arrray}"
-    puts "#{persons_array}"
+    persons_array.each do |f|
+      puts f.to_s
+    end
 
   end
 
   def fill_vacancy(vacancy)
     vacancy_arrray = []
-    vacancy.each do |hash|
-      vacancy_arrray.push(Vacancy.new(hash))
+    vacancy.each do |h|
+      vacancy_arrray.push(Vacancy.new(h['name'],h['dep'],h['pay'],
+                                       h['age'],h['dep'],h['prof']))
     end
   end
 
   def fill_persons(persons)
     persons_array = []
-    persons.each do |hash|
-      persons_array.push(Person.new(hash))
+    persons.each do |h|
+      persons_array.push(Person.new(h['name'],h['deg'],h['prof']))
+
+      puts Person.new(h['name'],h['deg'],h['prof'])
     end
   end
 
