@@ -1,12 +1,12 @@
 person:
   - id: 0
     name: Name
-    degree: Degree
-    profession: Profession
+    deg: Degree
+    prof: Profession
   - id: 1
     name: Vasia
-    degree: pty
-    profession: svaarshik
+    deg: pty
+    prof: svaarshik
 vacancy:
   - id: 0
     name: name
