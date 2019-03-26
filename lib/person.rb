@@ -5,7 +5,6 @@ class Person
     @name = name
     @deg = deg
     @prof = prof
-    
   end
 
   def to_s

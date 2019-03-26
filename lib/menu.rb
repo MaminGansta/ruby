@@ -1,42 +1,19 @@
 require_relative 'person'
 require_relative 'vacancy'
-require 'psych'
+require_relative 'file_io'
 
 class Menu
 
   def menu
-    data = Psych.load_file(File.expand_path('../data/all_data.yaml',__dir__))
-    persons_array = fill_persons(data['person'])
-    vacancy_arrray = fill_vacancy(data['vacancy'])
+    file = File_io.new
+    persons_array  = file.fill_persons_array
+    vacancy_arrray = file.fill_vacancy_array
 
-    persons_array.each do |f|
-      puts f.to_s
-    end
+    persons_array.each {|x| puts x}
 
   end
 
-  def fill_vacancy(vacancy)
-    vacancy_arrray = []
-    vacancy.each do |h|
-      vacancy_arrray.push(Vacancy.new(h['name'],h['dep'],h['pay'],
-                                       h['age'],h['dep'],h['prof']))
-    end
-  end
-
-  def fill_persons(persons)
-    persons_array = []
-    persons.each do |h|
-      persons_array.push(Person.new(h['name'],h['deg'],h['prof']))
-
-      puts Person.new(h['name'],h['deg'],h['prof'])
-    end
-  end
-
-  def file_out(res)
-    res = Psych.dump(data)
-    File.open(File.expand_path('../data/res_data.yaml',__dir__),'w') do |f|
-      f.puts "#{res} + 1"
-    end
+  def command_block
   end
 
 end
