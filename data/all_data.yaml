@@ -1,10 +1,12 @@
 person:
   - id: 0
     name: Name
+    age: 22
     deg: Degree
     prof: Profession
   - id: 1
     name: Vasia Petrov
+    age: 23
     deg: pty
     prof: svaarshik
 vacancy:
@@ -15,3 +17,4 @@ vacancy:
     age: age
     deg: deg
     prof: prof
+count_workers: 2

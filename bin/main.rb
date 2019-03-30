@@ -1,4 +1,3 @@
 require_relative '../lib/menu'
 
-
-Menu.new.menu
+Menu::Core.new.menu

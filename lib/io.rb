@@ -1,13 +1,11 @@
 require_relative 'person'
 require 'psych'
 
-class File_io
+module Io
 
-  def initialize
-    @data = Psych.load_file(File.expand_path('../data/all_data.yaml',__dir__))
-  end
+  file = File.expand_path('../data/all_data.yaml',__dir__)
 
-  def fill_vacancy_array
+  def fill_position_array
     vacancy_arrray = []
     # array of hashes
     @data['vacancy'].each do |h|
@@ -20,9 +18,14 @@ class File_io
   def fill_persons_array
     persons_array = []
     @data['person'].each do |h|
-      persons_array << Person.new(h['name'],h['deg'],h['prof'])
+      persons_array << Person.new(h['name'], h['age'],
+                                   h['deg'], h['prof'])
     end
     persons_array
+  end
+
+  def count_workers
+    @data['count_workers']
   end
 
   def file_out(res)

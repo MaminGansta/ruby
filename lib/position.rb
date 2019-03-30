@@ -1,4 +1,4 @@
-class Vacancy
+class Position
   attr_reader :name, :dep, :pay, :age, :deg, :prof
 
   def initialize(name, dep, pay, age, deg, prof)
