@@ -1,23 +1,20 @@
 person:
-  - id: 0
-    name: Name
+  - name: Name
     age: 22
     deg: Degree
     prof: Profession
-    position: unemployed
-  - id: 1
-    name: Vasia Petrov
+    position: position
+  - name: Vasia Petrov
     age: 23
     deg: pty
     prof: svaarshik
     position: unemployed
 position:
   - id: 0
-    name: name
-    dep: dep
-    pay: pay
-    age: age
+    name: Cook
+    dep: restoraunt
+    pay: 20000
+    max_age: 45
     deg: deg
     prof: prof
     amount: 10
-count_workers: 2

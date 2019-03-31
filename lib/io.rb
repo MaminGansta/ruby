@@ -3,7 +3,7 @@ require 'psych'
 
 module Employment
 
- module Io
+ module IO
 
   FILE = File.expand_path('../data/all_data.yaml',__dir__)
 
@@ -23,7 +23,7 @@ module Employment
       # array of hashes
       @data['position'].each do |h|
         position_arrray << (Position.new(h['name'], h['dep'], h['pay'],
-                                         h['age'], h['dep'], h['prof']))
+                                         h['max_age'], h['deg'], h['prof'], h['amount']))
       end
       position_arrray
      end
@@ -38,10 +38,6 @@ module Employment
        persons_array
      end
 
-
-     def count_workers
-       @data['count_workers']
-     end
 
 
      def file_out(res)
@@ -64,12 +60,20 @@ module Employment
           next
         end
 
-        return str
+        return str.strip
       end
     end
 
-    def input_num
+    def self.input_num
+      loop do
+        line = gets
+        if line.strip.empty?
+          puts 'try agen'
+          next
+        end
+        return line.strip.to_i
 
+      end
     end
 
  end

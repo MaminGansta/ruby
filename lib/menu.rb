@@ -9,9 +9,9 @@ module Employment
   class Core
     def initialize
       @commands = {'help' => :help, 'personr' => :remove_person, 'persona' => :add_person,
-                   'selection' => :selection, 'showp' => :showp, 'showv' => :vacancy,
+                   'selection' => :selection, 'showp' => :show_persons, 'showv' => :show_vacancy,
                    'psortn' => :psortn , 'psortp' => :psortp, 'salary' => :salary,
-                   'positiona' => :position_add, 'positionr' => :position_remove, 'exit' => :exit }
+                   'positiona' => :add_position, 'positionr' => :position_remove, 'exit' => :exit }
       @data = Storage.new
     end
 
@@ -19,9 +19,10 @@ module Employment
       send(:help)
 
       loop do
-        input = Io.input_str
-        puts input
-        command = @commands[input]
+        puts "\n menu section \n"
+        input = IO.input_str
+
+        command = @commands[input.strip]
 
         if command.nil?
           puts command
@@ -29,16 +30,42 @@ module Employment
           next
         end
 
+        puts ''
         send(command)
       end
     end
 
     private
 
-    def exit
-      puts 'kek'
-      exit
+    def add_person
+      puts 'Entir name and surname'
+      name = IO.input_str
+      puts 'Enter age'
+      age = IO.input_num
+      puts 'Enter degree'
+      deg = IO.input_str
+      puts 'Enter profession'
+      prof = IO.input_str
+
+      @data.add_person(name, age, deg, prof)
     end
+
+    def add_position
+      puts 'name'
+      puts 'dep'
+      puts 'pay'
+      puts 'max_age'
+      puts 'prof'
+      puts 'amount'
+    end
+
+    def show_persons
+      @data.show_persons
+    end
+
+    def show_vacancy
+    end
+
 
     def help
       puts '

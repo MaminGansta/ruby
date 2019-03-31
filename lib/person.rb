@@ -3,7 +3,7 @@
 class Person
   attr_reader :name, :deg, :prof
 
-  def initialize(name, age, deg, prof, position)
+  def initialize(name, age, deg, prof, position = 'unemployed')
     @name = name
     @age = age
     @deg = deg
@@ -12,6 +12,6 @@ class Person
   end
 
   def to_s
-    "name is #{@name} deg #{@deg} prof #{@prof}"
+    "#{@name} #{@deg} #{@prof} #{@position}"
   end
 end

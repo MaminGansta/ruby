@@ -7,24 +7,30 @@ require_relative 'position'
 module Employment
   class Storage
     def initialize
-      @file = Io::File_io.new
+      @file = IO::File_io.new
       @persons_array = @file.fill_persons_array
       @position_arrray = @file.fill_position_array
-      @count_workers = @file.count_workers
+
+      pp @persons_array
+      pp @position_arrray
     end
 
 
-    def add_person
+    def add_person(name, age, deg, prof)
+      @persons_array << Person.new(name, age, deg, prof)
     end
 
-    def add_position
+    def add_position(name, dep, pay, age, deg, prof, amount)
+      @position_arrray << Position.new(name, dep, pay, age, deg, prof, amount)
     end
 
 
     def rem_person
+
     end
 
     def rem_positin
+
     end
 
 
@@ -39,6 +45,7 @@ module Employment
     end
 
     def show_persons
+      @persons_array.each {|person| puts person}
     end
 
 
