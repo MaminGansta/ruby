@@ -4,12 +4,14 @@ person:
     age: 22
     deg: Degree
     prof: Profession
+    position: unemployed
   - id: 1
     name: Vasia Petrov
     age: 23
     deg: pty
     prof: svaarshik
-vacancy:
+    position: unemployed
+position:
   - id: 0
     name: name
     dep: dep

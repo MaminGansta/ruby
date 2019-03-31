@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../lib/menu'
 
-Menu::Core.new.menu
+Employment::Core.new.menu
