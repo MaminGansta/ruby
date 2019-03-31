@@ -10,7 +10,7 @@ class Position
     @age = age
     @deg = deg
     @prof = prof
-    @amount = @amount
+    @amount = amount
   end
 
   def to_s

@@ -19,4 +19,5 @@ position:
     age: age
     deg: deg
     prof: prof
+    amount: 10
 count_workers: 2

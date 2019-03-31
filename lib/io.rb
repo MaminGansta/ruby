@@ -54,7 +54,7 @@ module Employment
   end
 
 
-    def in_str
+    def self.input_str
       loop do
         str = gets
         str.strip

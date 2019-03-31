@@ -11,7 +11,7 @@ module Employment
       @commands = {'help' => :help, 'personr' => :remove_person, 'persona' => :add_person,
                    'selection' => :selection, 'showp' => :showp, 'showv' => :vacancy,
                    'psortn' => :psortn , 'psortp' => :psortp, 'salary' => :salary,
-                   'positiona' => :position_add, 'positionr' => :position_remove }
+                   'positiona' => :position_add, 'positionr' => :position_remove, 'exit' => :exit }
       @data = Storage.new
     end
 
@@ -19,10 +19,12 @@ module Employment
       send(:help)
 
       loop do
-        input = Io.in_str
-        command = commands['input']
+        input = Io.input_str
+        puts input
+        command = @commands[input]
 
         if command.nil?
+          puts command
           puts 'wrong command'
           next
         end
