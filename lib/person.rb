@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class Person
-  attr_reader :name, :deg, :prof
+  include Comparable
+  attr_reader :name, :deg, :prof, :position, :age
+  attr_writer :position
 
   def initialize(name, age, deg, prof, position = 'unemployed')
     @name = name
@@ -11,7 +13,11 @@ class Person
     @position = position
   end
 
+  def <=>(other)
+    @name <=> other.name
+  end
+
   def to_s
-    "#{@name} #{@deg} #{@prof} #{@position}"
+    "#{@name} #{@age} #{@deg} #{@prof} #{@position}"
   end
 end

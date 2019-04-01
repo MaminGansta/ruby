@@ -1,13 +1,13 @@
 person:
-  - name: Name
+  - name: zName
     age: 22
     deg: Degree
     prof: Profession
-    position: position
+    position: zposition
   - name: Vasia Petrov
     age: 23
-    deg: pty
-    prof: svaarshik
+    deg: Universety
+    prof: Cook
     position: unemployed
 position:
   - id: 0
@@ -15,6 +15,6 @@ position:
     dep: restoraunt
     pay: 20000
     max_age: 45
-    deg: deg
-    prof: prof
+    deg: Universety
+    prof: Cook
     amount: 10

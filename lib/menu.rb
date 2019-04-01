@@ -8,10 +8,10 @@ require_relative 'io'
 module Employment
   class Core
     def initialize
-      @commands = {'help' => :help, 'personr' => :remove_person, 'persona' => :add_person,
-                   'selection' => :selection, 'showp' => :show_persons, 'showv' => :show_vacancy,
-                   'psortn' => :psortn , 'psortp' => :psortp, 'salary' => :salary,
-                   'positiona' => :add_position, 'positionr' => :position_remove, 'exit' => :exit }
+      @commands = { 'help' => :help, 'personr' => :remove_person, 'persona' => :add_person,
+                    'selection' => :selection, 'showp' => :show_persons, 'showv' => :show_vacancy,
+                    'psortn' => :psortn, 'psortp' => :psortp, 'salary' => :show_salary,
+                    'positiona' => :add_position, 'positionr' => :remove_position, 'exit' => :exit }
       @data = Storage.new
     end
 
@@ -26,7 +26,6 @@ module Employment
 
         if command.nil?
           puts command
-          puts 'wrong command'
           next
         end
 
@@ -51,12 +50,34 @@ module Employment
     end
 
     def add_position
-      puts 'name'
-      puts 'dep'
-      puts 'pay'
-      puts 'max_age'
-      puts 'prof'
-      puts 'amount'
+      puts 'Name and surname'
+      name = IO.input_str
+      puts 'Department'
+      dep = IO.input_str
+      puts 'Salary'
+      pay = IO.input_num
+      puts 'Age limit'
+      age = IO.input_num
+      puts 'Degree'
+      deg = IO.input_str
+      puts 'Proffesion'
+      prof = IO.input_str
+      puts 'Amount'
+      amount = IO.input_num
+
+      @data.add_position(name, dep, pay, age, deg, prof, amount)
+    end
+
+    def remove_person
+      puts 'Enter name and surname'
+      name = IO.input_str
+      @data.rem_person(name)
+    end
+
+    def remove_position
+      puts 'Enter name'
+      name = IO.input_str
+      @data.rem_position(name)
     end
 
     def show_persons
@@ -64,8 +85,20 @@ module Employment
     end
 
     def show_vacancy
+      @data.show_vacancy
     end
 
+    def psortn
+      @data.sort_by_name
+    end
+
+    def psortp
+      @data.sort_by_position
+    end
+
+    def show_salary
+      puts "total salary: #{@data.salary}"
+    end
 
     def help
       puts '
@@ -82,5 +115,8 @@ module Employment
             '
     end
 
+    def selection
+      @data.selection
+    end
   end
 end
