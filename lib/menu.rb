@@ -30,11 +30,18 @@ module Employment
         end
 
         puts ''
+
+        file_out if command == :exit
+
         send(command)
       end
     end
 
     private
+
+    def file_out
+      @data.file_out
+    end
 
     def add_person
       puts 'Entir name and surname'

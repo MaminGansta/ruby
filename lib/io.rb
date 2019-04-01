@@ -32,9 +32,9 @@ module Employment
       end
 
       def file_out(res)
-        res = Psych.dump(data)
+        res_to_file = Psych.dump(res)
         File.open(File.expand_path('../data/res_data.yaml', __dir__), 'w') do |f|
-          f.puts "#{res} + 1"
+          f.puts "#{res_to_file}"
         end
       end
     end

@@ -1,19 +1,20 @@
 ---
-person:
-- id: 0
-  name: Name
-  degree: Degree
-  profession: Profession
-- id: 1
-  name: Vasia
-  degree: pty
-  profession: svaarshik
-vacancy:
-- id: 0
-  name: name
-  dep: dep
-  pay: pay
-  age: age
-  deg: deg
-  prof: prof
+peson:
+- name: zName
+  age: 22
+  prof: Profession
+  deg: Degree
+  position: zposition
+- name: Vasia Petrov
+  age: 23
+  prof: Cook
+  deg: Universety
+  position: unemployed
+position:
+- name: Cook
+  max_age: 45
+  prof: Cook
+  deg: Universety
+  amount: 10
+  pay: 20000
  + 1
