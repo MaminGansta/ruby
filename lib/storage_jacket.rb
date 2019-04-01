@@ -47,7 +47,7 @@ module Employment
     end
 
     def show_persons
-      @persons_array.each {|person| puts person }
+      @persons_array.each { |person| puts person }
     end
 
     def salary
@@ -70,14 +70,14 @@ module Employment
       person_hash_array = []
       position_hash_array = []
       @persons_array.each do |person|
-        person_hash_array << {'name' => person.name, 'age' => person.age, 'prof' => person.prof,
-                              'deg' => person.deg, 'position' => person.position}
+        person_hash_array << { 'name' => person.name, 'age' => person.age, 'prof' => person.prof,
+                               'deg' => person.deg, 'position' => person.position }
       end
       @position_array.each do |position|
-        position_hash_array << {'name' => position.name, 'max_age' => position.max_age, 'prof' => position.prof,
-                              'deg' => position.deg, 'amount' => position.amount, 'pay' => position.pay}
+        position_hash_array << { 'name' => position.name, 'max_age' => position.max_age, 'prof' => position.prof,
+                                 'deg' => position.deg, 'amount' => position.amount, 'pay' => position.pay }
       end
-      hash_res = {'peson' => person_hash_array, 'position' => position_hash_array}
+      hash_res = { 'peson' => person_hash_array, 'position' => position_hash_array }
 
       @file.file_out(hash_res)
     end
